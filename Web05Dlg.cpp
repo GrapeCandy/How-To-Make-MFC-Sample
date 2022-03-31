@@ -154,17 +154,18 @@ HCURSOR CWeb05Dlg::OnQueryDragIcon()
 
 void CWeb05Dlg::OnBnClickedOk()
 {
-	CString strUrl;
-	m_ctrlURL.GetWindowText(strUrl);
+	CString strUrl;						// The buffer location to obtain the copied string of the window title.
+	m_ctrlURL.GetWindowText(strUrl);			// Copy the text in the control.
 
-	m_ctrlIE.Navigate(strUrl, NULL, NULL, NULL, NULL);
+	m_ctrlIE.Navigate(strUrl, NULL, NULL, NULL, NULL);	// Go to the "strUrl" web page.
 
 }
+// Register an event that alerts you when a TitleChange event occurs in WebBrowser.
 BEGIN_EVENTSINK_MAP(CWeb05Dlg, CDialog)
 	ON_EVENT(CWeb05Dlg, IDC_EXPLORER1, 113/* TitleChange */, CWeb05Dlg::TitleChangeExplorer1, VTS_BSTR)
 END_EVENTSINK_MAP()
 
 void CWeb05Dlg::TitleChangeExplorer1(LPCTSTR Text)
 {
-	::MessageBox(NULL, L"test", L"test", MB_OK);
+	::MessageBox(NULL, L"test", L"test", MB_OK);	// Display alert MessagBox.
 }
