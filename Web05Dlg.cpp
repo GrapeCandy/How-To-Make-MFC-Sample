@@ -161,7 +161,7 @@ void CWeb05Dlg::OnBnClickedOk()
 
 }
 BEGIN_EVENTSINK_MAP(CWeb05Dlg, CDialog)
-	ON_EVENT(CWeb05Dlg, IDC_EXPLORER1, 113, CWeb05Dlg::TitleChangeExplorer1, VTS_BSTR)
+	ON_EVENT(CWeb05Dlg, IDC_EXPLORER1, 113/* TitleChange */, CWeb05Dlg::TitleChangeExplorer1, VTS_BSTR)
 END_EVENTSINK_MAP()
 
 void CWeb05Dlg::TitleChangeExplorer1(LPCTSTR Text)
